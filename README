@@ -5,7 +5,8 @@ Environment variables
 ---------------------
 
 ircHost     -    Hostname for irc to connect to
-botName     -   Nice name for the bot
+botName     -    Nice name for the bot
+tracktTv    -    Api key from trakt.tv https://trakt.tv/oauth/applications/new
 
 More readme
 -----------

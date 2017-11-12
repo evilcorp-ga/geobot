@@ -2,7 +2,7 @@ const irc = require('irc');
 const loader = require('require-dir');
 
 var config = {
-    channels: ["#lobby"],
+    channels: ["#lobby","#bots"],
     server: process.env.ircHost,
     botName: process.env.botName
 };
