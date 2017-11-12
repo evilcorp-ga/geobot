@@ -1,0 +1,14 @@
+Geobot
+======
+
+Environment variables
+---------------------
+
+ircHost     -    Hostname for irc to connect to
+botName     -   Nice name for the bot
+
+More readme
+-----------
+
+I'm not big on writing readme files so i will add this file and hope gareth ends
+up writing something here that has actual value.
