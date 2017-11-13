@@ -15,7 +15,7 @@ var modules = loader('../plugins');
 
 bot.addListener("message", function(from, to, text, message) {
     Object.keys(modules).forEach((key)=>{
-        modules[key](from, to, text)
+        modules[key](from, to, text, bot)
             .then((resp)=>{
                 bot.say(resp[0], resp[1]);
             })
