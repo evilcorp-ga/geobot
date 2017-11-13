@@ -26,3 +26,7 @@ bot.addListener("message", function(from, to, text, message) {
             });
     });
 });
+
+bot.addListener('error', function(message) {
+        console.log('error: ', message);
+});
