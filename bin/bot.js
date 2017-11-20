@@ -14,6 +14,10 @@ var bot = new irc.Client(config.server,config.botName, {
 var modules = loader('../plugins');
 var jmodules = loader('../join');
 
+setTimeout(function(){
+    bot.say("nickserv","IDENTIFY "+process.env.botPass);
+}, 3000);
+
 bot.addListener("join", function(channel,who) {
     Object.keys(jmodules).forEach((key)=>{
         jmodules[key](bot,channel,who)
