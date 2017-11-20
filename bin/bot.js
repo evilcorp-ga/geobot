@@ -12,6 +12,21 @@ var bot = new irc.Client(config.server,config.botName, {
 });
 
 var modules = loader('../plugins');
+var jmodules = loader('../join');
+
+bot.addListener("join", function(channel,who) {
+    Object.keys(jmodules).forEach((key)=>{
+        jmodules[key](bot,channel,who)
+            .then((resp)=>{
+                bot.say(resp[0], resp[1]);
+            })
+            .catch((err)=>{
+                if(err.message.length > 2) {
+                    console.log(err.message);
+                }
+            });
+    });
+});
 
 bot.addListener("message", function(from, to, text, message) {
     Object.keys(modules).forEach((key)=>{
@@ -26,6 +41,8 @@ bot.addListener("message", function(from, to, text, message) {
             });
     });
 });
+
+
 
 bot.addListener('error', function(message) {
         console.log('error: ', message);
