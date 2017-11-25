@@ -1,5 +1,9 @@
 const irc = require('irc');
 const loader = require('require-dir');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/geobot', { useMongoClient: true });
+mongoose.Promise = global.Promise;
 
 var config = {
     channels: ["#lobby","#bots"],
